@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundraising for a MacBook Pro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 50px;
+      text-align: center;
+    }
+    .progress {
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .progress-bar {
+      height: 30px;
+      width: 0;
+      background-color: #4caf50;
+      text-align: center;
+      color: white;
+      line-height: 30px;
+      font-weight: bold;
+    }
+    .donate-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Help Me Get a MacBook Pro for My Studies!</h1>
+    <p>Hi! I'm a student looking to raise funds for a MacBook Pro to support my academic and professional goals. Any amount of support is greatly appreciated!</p>
+
+    <!-- Progress bar section -->
+    <div class="progress">
+      <div class="progress-bar" style="width: 0%;" id="progress-bar">0%</div>
+    </div>
+
+    <!-- Donation link -->
+    <a class="donate-button" href="https://revolut.me/yourrevolutlink" target="_blank">Donate via Revolut</a>
+  </div>
+
+  <script>
+    // Replace 'goal' and 'currentAmount' with your actual goal and current amount raised.
+    const goal = 2000;  // Set your goal amount here, e.g., 2000 for $2000
+    const currentAmount = 500; // Replace with the actual amount raised so far
+
+    const progressBar = document.getElementById('progress-bar');
+    const progressPercentage = (currentAmount / goal) * 100;
+
+    // Update the progress bar's width and text to reflect the current progress
+    progressBar.style.width = progressPercentage + '%';
+    progressBar.textContent = Math.floor(progressPercentage) + '%';
+  </script>
+</body>
+</html>
