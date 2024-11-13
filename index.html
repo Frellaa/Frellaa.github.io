@@ -13,7 +13,7 @@
       background-color: #f4f4f4;
       color: #333;
       margin: 0;
-      padding: 0;
+      padding: 20px;
     }
     .container {
       max-width: 600px;
@@ -21,7 +21,7 @@
       background-color: white;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-top: 50px;
+      margin-top: 30px;
       text-align: center;
     }
     .progress {
@@ -49,12 +49,20 @@
       border-radius: 5px;
       margin-top: 20px;
     }
+    .personal-info {
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Help Me Get a MacBook Pro for My Studies!</h1>
-    <p>Hi! I'm a student looking to raise funds for a MacBook Pro to support my academic and professional goals. Any amount of support is greatly appreciated!</p>
+    <h1>Fundraising for a MacBook Pro</h1>
+    <div class="personal-info">
+      <p>My name is Regina Nóra Fiam, and I am currently an MSc student in biotechnology in Budapest. I completed my undergraduate studies in biophysics. In addition, I'm very interested in programming and AI technology. I have numerous project ideas and am actively working on them, such as a language learning app (text-to-speech translation), a university slide explainer to podcast converter, and a trading bot.</p>
+      <p>Unfortunately, I realized that my current device (Dell Inspiron 501) is insufficient for my work. Therefore, I would like to purchase a MacBook Pro 14-inch (<a href="https://www.apple.com/hu/shop/buy-mac/macbook-pro/14-h%C3%BCvelykes-modell-asztrofekete-norm%C3%A1l-kijelz%C5%91-apple-m4-pro-chip-12-magos-cpu-val-%C3%A9s-16-magos-gpu-val-24-gb-mem%C3%B3ria-512gb" target="_blank">link to MacBook Pro</a>), which, unfortunately, is out of my budget as a university student currently on Erasmus in Bologna.</p>
+      <p>I am reaching out to the community for help. All collected funds will be transparently dedicated to purchasing this laptop, and I will make the progress public on this website. Once the target amount is reached, the fundraising will automatically close.</p>
+      <p>Thank you, and I trust in the power of community support!</p>
+    </div>
 
     <!-- Progress bar section -->
     <div class="progress">
@@ -66,16 +74,24 @@
   </div>
 
   <script>
-    // Replace 'goal' and 'currentAmount' with your actual goal and current amount raised.
-    const goal = 2000;  // Set your goal amount here, e.g., 2000 for $2000
-    const currentAmount = 500; // Replace with the actual amount raised so far
+    // Set your goal and current amount manually here
+    const goal = 2500;  // Target in EUR
+    const currentAmount = 800; // Replace with the current raised amount in EUR
 
+    // Calculate progress percentage
     const progressBar = document.getElementById('progress-bar');
     const progressPercentage = (currentAmount / goal) * 100;
 
-    // Update the progress bar's width and text to reflect the current progress
+    // Update progress bar width and text
     progressBar.style.width = progressPercentage + '%';
     progressBar.textContent = Math.floor(progressPercentage) + '%';
+
+    // Automatically close donation when target is reached
+    if (currentAmount >= goal) {
+      document.querySelector('.donate-button').textContent = "Goal Reached! Thank You!";
+      document.querySelector('.donate-button').style.backgroundColor = '#888';
+      document.querySelector('.donate-button').style.pointerEvents = 'none';
+    }
   </script>
 </body>
 </html>
